@@ -1,0 +1,26 @@
+{
+  "name": "hdm-bithub-cobrand",
+  "version": "0.1.0",
+  "description": "",
+  "main": "hdm-cobrand.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "can": "2.3.17",
+    "jquery": "2.1.4",
+    "lodash": "^4.5.1",
+    "moment": "^2.11.2",
+    "steal": "0.14.0",
+    "steal-tools": "0.14.0",
+    "v3": "0.0.0"
+  },
+  "system": {
+    "npmAlgorithm": "flat",
+    "configDependencies": [
+      "live-reload"
+    ]
+  }
+}

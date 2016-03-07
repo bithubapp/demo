@@ -1,0 +1,95 @@
+<header>
+    <img class="co-brand-header" src="./images/image-header.svg" />
+</header>
+
+{{#unless hashTag}}
+
+    <form class="init">
+        <div class="form-group">
+            <label for="hash-tag" class="form-label">Hashtag</label>
+            <input type="text" class="form-control" id="hash-tag" value="SIMensExpo" />
+        </div>
+
+        <div class="form-group">
+            <label for="embed-markup" class="form-label">Embed Markup</label>
+            <textarea rows="7" class="form-control" id="embed-markup">&lt;a href=&quot;http://bithub.com/embed?hubId=1&amp;tenant=benevolent_foliage_3723&amp;decision=approved&amp;view=public&quot; class=&quot;bithub-embed&quot;&gt;Harness Digital Marketing Embed&lt;/a&gt;&lt;script src=&quot;http://bithub.com/embed.js&quot;&gt;&lt;/script&gt;</textarea>
+            <br/>
+            <button type="button" class="btn btn-default" ($click)="showHub">Let's Do This!</button>
+        </div>
+    </form>
+
+{{else}}
+
+    <div id="main">
+        <div id="starred">
+            <div>Event Sponsors</div>
+            <bithub-starred {starred-url}="starredURL" />
+        </div>
+
+        <div id="bigbit">
+            {{#approvedBit}}
+                {{!-- todo: should be partial template / own component --}}
+                <div class="current-bit">
+                    <img src="{{images.0.url}}" />
+
+                    <div class="content">
+                        <div class="header">
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-twitter"></i>
+                            <span>#{{{hashTag}}}</span>
+                        </div>
+
+                        <hr/>
+
+                        <div class="inner-content-wrap">
+                            {{{title}}}
+                        </div>
+
+                        <hr/>
+
+                        <div class="author-wrap">
+                            {{#if author.avatar_url}}
+                                <img src="{{author.avatar_url}}"/>
+                            {{/if}}
+                            <b>{{author.id}}</b>
+                            &nbsp;<i class="fa fa-{{feed_name}}"></i>
+                            <div class="updated">{{updatedAt}}</div>
+                        </div>
+                    </div>
+                </div>
+            {{/approvedBit}}
+
+            {{#nextApproved}}
+                <div class="next-bit">
+                    <img src="{{images.0.url}}" />
+
+                    <div class="content">
+                        <div class="header">
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-twitter"></i>
+                            <span>#{{{hashTag}}}</span>
+                        </div>
+
+                        <hr/>
+
+                        <div class="inner-content-wrap">
+                            {{{title}}}
+                        </div>
+
+                        <hr/>
+
+                        <div class="author-wrap">
+                            {{#if author.avatar_url}}
+                                <img src="{{author.avatar_url}}"/>
+                            {{/if}}
+                            <b>{{author.id}}</b>
+                            &nbsp;<i class="fa fa-{{feed_name}}"></i>
+                            <div class="updated">{{updatedAt}}</div>
+                        </div>
+                    </div>
+                </div>
+            {{/nextApproved}}
+        </div>
+    </div>
+
+{{/unless}}
