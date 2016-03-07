@@ -6,7 +6,7 @@ import initView from "./index.stache!";
 import "can/view/autorender/";
 import "can/map/define/";
 import "can/list/promise/";
-import "./hdm-cobrand.less!";
+import "./bithub-demo.less!";
 import "sponsors/";
 import moment from 'moment';
 import "can/control/plugin/";
@@ -16,7 +16,7 @@ let feedURL = function(hub, decision, tenant) {
 };
 
 can.Component.extend({
-	tag: "hdm-cobrand",
+	tag: "bithub-demo",
 	template: initView,
 	viewModel: {
 		currentBitIdx: null,

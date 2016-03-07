@@ -1,5 +1,5 @@
 <header>
-    <img class="co-brand-header" src="./images/image-header.svg" />
+    <img class="co-brand-header" src="./images/bithub-logo.svg" />
 </header>
 
 {{#unless hashTag}}
